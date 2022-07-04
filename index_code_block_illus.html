@@ -339,33 +339,8 @@
                 Try it now <i class="fe fe-arrow-right ml-2"></i>
               </button>
 
-            <!-- codeblock -->
-            <div class="highlight-block">
-              
-              <!-- Controls -->
-              <div class="d-flex">
-                <span class="bg-danger rounded-circle" style="width: 5px; height: 5px;"></span>
-                <span class="bg-warning rounded-circle ml-1" style="width: 5px; height: 5px;"></span>
-                <span class="bg-success rounded-circle ml-1" style="width: 5px; height: 5px;"></span>
-              </div>              
-
-              <pre>
-                <code class="language-python">
-
-<span class="text-python-hl">import</span> request
-
-api_endpoint <span class="text-hl">=</span> <span class="text-python-hl">'https://nubela.co/proxycurl/api/find/company/role'</span>
-api_key <span class="text-hl">=</span> <span class="text-python-hl">'YOUR_API_KEY'</span>
-header_dic <span class="text-hl">=</span> {'<span class="text-python-hl">Authorization': 'Bearer'</span>  <span class="text-hl">+</span> api_key}
-params <span class="text-hl">=</span> {
-    <span class="text-python-hl">'role': 'cto'</span>,
-    <span class="text-python-hl">'company_name': 'google'</span>,
-}
-response <span class="text-hl">=</span>  requests.get(api_endpoint,
-            params<span class="text-hl">=</span>params,
-            headers<span class="text-hl">=</span>header_dic)            
-            </code></pre>
-            </div>
+              <!-- Image -->
+              <img class="img-fluid rounded screenshot" src="assets/img/illustrations/salesandmarketing_2_1.png">
               
               </div>
               </div>
@@ -388,29 +363,8 @@ response <span class="text-hl">=</span>  requests.get(api_endpoint,
               Try it now <i class="fe fe-arrow-right ml-2"></i>
             </button>            
 
-            <!-- codeblock -->
-            <div class="highlight-block mt-1">
-              
-              <!-- Controls -->
-              <div class="d-flex">
-                <span class="bg-danger rounded-circle" style="width: 5px; height: 5px;"></span>
-                <span class="bg-warning rounded-circle ml-1" style="width: 5px; height: 5px;"></span>
-                <span class="bg-success rounded-circle ml-1" style="width: 5px; height: 5px;"></span>
-              </div>              
-
-              <pre>
-                <code class="language-python">
-
-SELECT
-    <span class="text-python-hl">id</span>,
-    parsed_data<span class="text-hl">->></span><span class="text-python-hl">'first_name'</span> AS first_name,
-    parsed_data<span class="text-hl">-></span><span class="text-python-hl">'last_name'</span> AS last_name,
-    jsonb_path_query_first(parsed_data, <span class="text-hl">'$.experiences[*] ?</span> (@.ends_at <span class="text-hl">==</span> null && @.title <span class="text-hl">==</span> <span class="text-python-hl">"CTO"</span> && @.location <span class="text-hl">==</span> <span class="text-python-hl">"Bay Area</span>").title') AS title
-FROM profile
-WHERE to_tsvector(<span class="text-python-hl">'simple'</span>, parsed_data) @@ plainto_tsquery(<span class="text-python-hl">'simple'</span>,<span class="text-python-hl">'CTO Bay Area'</span>) <span class="text-hl">--</span> general full text search
-  AND parsed_data @> <span class="text-python-hl">'{"experiences": [{"ends_at": null, "title":"CTO", "location": "Bay Area"}]}'</span> <span class="text-hl">--</span> confirm
-  </code> <br><br> <br><br><br></pre>
-            </div>
+            <!-- Image -->
+            <img class="img-fluid rounded screenshot pt-2" src="assets/img/illustrations/salesandmarketing_2_2.png">
 
             </div>
             </div>
